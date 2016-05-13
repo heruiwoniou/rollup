@@ -1,5 +1,6 @@
-import ModuleOne from './modules/module-one.js'
+import { a } from './a';
 
-export default function(){
-	ModuleOne.one();
+export default function (){
+	let NewName= [ 1, 2, 3 ];
+	console.log(a);
 }
