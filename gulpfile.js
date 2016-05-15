@@ -21,10 +21,10 @@ gulp.task('build',['lint'],function(){
 
 	gulp.src('src/index.js', {read: false})
 	    .pipe(rollup({
+	    	sourceMap: true,
 	    	format: 'umd',
 	    	moduleName:'Cvm',
-	        sourceMap: true,
-	        plugins:['es2015-rollup']
+	        plugins:[babel({"presets": ["es2015-rollup"]})]
 	    }))
 	    .pipe(sourcemaps.write())
 	    .pipe(gulp.dest('dist'));
