@@ -7,7 +7,9 @@ var gulp=require('gulp'),
 
 gulp.task('lint',function(){
 	return gulp.src(['src/**/*.js','!node_modules/**'])
-		.pipe(eslint())
+		.pipe(eslint({
+			parser:"babel-eslint"
+		}))
 		.pipe(eslint.format())
 		.pipe(eslint.failAfterError());
 })
